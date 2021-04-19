@@ -20,6 +20,7 @@
             "language": "sysmel",
             "scopeName": "source.sysmel",
             "path": "./syntaxes/sysmel.tmLanguage.json"
-        }]
+        }],
+        "breakpoints": [{ "language": "sysmel" }]
     }
 }
