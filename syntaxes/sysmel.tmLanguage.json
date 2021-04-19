@@ -1,0 +1,174 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Sysmel",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#metaBuilders"
+		},
+		{
+			"include": "#basicTypes"
+		},
+		{
+			"include": "#derivedTypes"
+		},
+		{
+			"include": "#namedConstants"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#symbols"
+		},
+		{
+			"include": "#characters"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+					"name": "comment.line.double-number-sign.sysmel",
+					"match": "##.*"
+			},
+			{
+				"name": "comment.block.documentation.sysmel",
+				"begin": "#\\*\\*",
+				"end": "\\*#"
+			},
+			{
+				"name": "comment.block.sysmel",
+				"begin": "#\\*",
+				"end": "\\*#"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.sysmel",
+				"match": "(::)?[\\+\\-/\\\\\\*~<>=@,%|&?!^]+"
+			},
+			{
+				"name": "keyword.operator.sysmel",
+				"match": ":="
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "support.function.sysmel",
+				"match": "[_A-Za-z][_A-Za-z0-9]*:"
+			}]
+		},
+		"metaBuilders" : {
+			"patterns": [{
+				"name": "storage.type.sysmel",
+				"match": "\\b(class|field|gcclass|let|macro|meta|method|namespace|struct|template)\\b"
+			},
+			{
+				"name": "storage.modifier.sysmel",
+				"match": "\\b(abstract|compileTime|const|inline|mutable|override|public|private|protected|virtual|sealed|static)\\b"
+			}]
+		},
+		"basicTypes" : {
+			"patterns": [{
+				"name": "support.type.sysmel",
+				"match": "\\b((Float(16|32|64))|(U?Int(8|16|32|64))|(Char(8|16|32))|Boolean8)(x2|x3|x4)?(x2|x3|x4)?\\b"
+			},
+			{
+				"name": "support.type.sysmel",
+				"match": "\\b(Void|UIntPointer)\\b"
+			}]
+		},
+		"derivedTypes" : {
+			"name": "storage.modifier.sysmel",
+			"match": "\\b(array|arraySlice|ref|pointer|sharedPointer|uniquePointer)\\b"
+		},
+		"namedConstants" : {
+			"name": "constant.language.sysmel",
+			"match": "\\b(true|false|nil|void)\\b"
+		},
+		"identifiers" : {
+			"patterns": [{
+				"name": "variable.language.sysmel",
+				"match": "\\b(self|super)\\b"
+			},
+			{
+				"name": "variable.language.sysmel",
+				"match": "\\b(SelfType|InstanceType)\\b"
+			},
+			{
+				"name": "variable.other.sysmel",
+				"match": "[_A-Za-z][_A-Za-z0-9]*"	
+			}
+			]
+		},
+		"numbers" : {
+			"patterns": [{
+				"name": "constant.numeric.sysmel",
+				"match": "(\\+|-)?[0-9]+r[0-9A-Za-z]+"	
+			},
+			{
+				"name": "constant.numeric.sysmel",
+				"match": "(\\+|-)?[0-9]+(\\.[0-9]+)?((eE)(\\+|-)[0-9]+)?"	
+			}]
+		},
+		"symbols": {
+			"patterns": [{
+				"name": "string.quoted.other.symbol.sysmel",
+				"begin": "#\"",
+				"end": "\"",
+				"patterns": [
+					{
+						"name": "constant.character.escape.sysmel",
+						"match": "\\\\."
+					}
+				]		
+			},
+			{
+				"name": "string.unquoted.symbol.sysmel",
+				"match": "#[_A-Za-z][_A-Za-z0-9]*"
+			},
+			{
+				"name": "string.unquoted.symbol.sysmel",
+				"match": "#[\\+\\-/\\\\\\*~<>=@,%|&?!^]+"
+			}
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.sysmel",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sysmel",
+					"match": "\\\\."
+				}
+			]
+		},
+		"characters": {
+			"name": "constant.character.sysmel",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sysmel",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.sysmel"
+}

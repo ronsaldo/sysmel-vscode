@@ -1,0 +1,25 @@
+{
+    "name": "sysmel",
+    "displayName": "Sysmel",
+    "description": "Sysmel Language Support",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sysmel",
+            "aliases": ["Sysmel", "sysmel"],
+            "extensions": [".sysmel"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sysmel",
+            "scopeName": "source.sysmel",
+            "path": "./syntaxes/sysmel.tmLanguage.json"
+        }]
+    }
+}
