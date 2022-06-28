@@ -160,7 +160,7 @@
 		},
 		"characters": {
 			"name": "constant.character.sysmel",
-			"begin": "'",
+			"begin": "(?<!`)'",
 			"end": "'",
 			"patterns": [
 				{
