@@ -139,6 +139,10 @@
 			},
 			{
 				"name": "string.unquoted.symbol.sysmel",
+				"match": "#([_A-Za-z][_A-Za-z0-9]*:)+"
+			},
+			{
+				"name": "string.unquoted.symbol.sysmel",
 				"match": "#[_A-Za-z][_A-Za-z0-9]*"
 			},
 			{
