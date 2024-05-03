@@ -13,7 +13,7 @@
         "languages": [{
             "id": "sysmel",
             "aliases": ["Sysmel", "sysmel"],
-            "extensions": [".sysmel"],
+            "extensions": [".sysmel", ".sysmeli"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
