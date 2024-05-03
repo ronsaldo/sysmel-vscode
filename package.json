@@ -21,6 +21,29 @@
             "scopeName": "source.sysmel",
             "path": "./syntaxes/sysmel.tmLanguage.json"
         }],
-        "breakpoints": [{ "language": "sysmel" }]
+        "breakpoints": [{ "language": "sysmel" }],
+        "problemMatchers": [
+            {
+                "name": "sysmelc",
+                "source": "sysmelc",
+                "owner": "sysmel",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": [
+                    {
+                        "regexp": "^(.*?):(\\d+)\\.(\\d+)-(\\d+)\\.(\\d+):?\\s+(?:fatal\\s+)?(warning|error):\\s+(.*)$$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "endLine": 4,
+                        "endColumn": 5,
+                        "severity": 6,
+                        "message": 7
+                    }
+                ]
+            }
+        ]
     }
 }
